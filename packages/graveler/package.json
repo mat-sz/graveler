@@ -1,0 +1,32 @@
+{
+  "name": "@graveler/graveler",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "lint": "run -T eslint src --ext ts,tsx"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.10.3",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "@trpc/server": "^11.0.0-next-beta.294",
+    "jsdom": "^24.0.0",
+    "nanoid": "^5.0.4",
+    "which": "^4.0.0",
+    "zod": "^3.22.4"
+  },
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

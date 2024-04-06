@@ -1,0 +1,21 @@
+{
+  "name": "graveler",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach -Api --topological-dev run build",
+    "build:deps": "yarn workspaces foreach -Api --topological-dev --exclude @graveler/client --exclude @graveler/server --exclude graveler run build",
+    "start": "yarn workspace @graveler/server run start",
+    "dev": "yarn workspaces foreach -Rpi --from '@graveler/{client,server}' run dev",
+    "lint": "yarn workspaces foreach -Api run lint"
+  },
+  "packageManager": "yarn@4.1.1",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
+}
